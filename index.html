@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --text:#0a0a0a;
+      --muted:#525252;
+      --muted2:#737373;
+      --link:#2563eb;
+      --btn:#18181b;
+      --btnText:#fafafa;
+      --bg:#ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ 
+      margin:0; 
+      padding:0; 
+      background:var(--bg); 
+      color:var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body{
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .wrap{
+      width:min(1150px, calc(100% - 48px));
+      margin:0 auto;
+      padding: 64px 0 80px;
+      text-align:center;
+    }
+
+    h1{
+      margin: 0 0 32px;
+      font-family: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      font-size: clamp(32px, 4.5vw, 56px);
+      color: #0a0a0a;
+      text-wrap: balance;
+    }
+
+    .authors{
+      margin: 0 auto 12px;
+      max-width: 980px;
+      font-size: clamp(15px, 1.5vw, 22px);
+      line-height: 1.6;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .authors .a{
+      color: var(--link);
+      text-decoration: none;
+      white-space: nowrap;
+      pointer-events:none;
+      cursor:default;
+      font-weight: 500;
+    }
+
+    sup{
+      font-size: 0.7em;
+      vertical-align: super;
+      font-weight: 600;
+      margin-left: 1px;
+    }
+
+    .affil{
+      margin: 16px 0 8px;
+      font-size: clamp(15px, 1.35vw, 20px);
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .notes{
+      margin: 8px 0 10px;
+      font-size: clamp(13px, 1.15vw, 17px);
+      color: var(--muted2);
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .email{
+      margin: 8px 0 28px;
+      font-size: clamp(13px, 1.15vw, 17px);
+      color: var(--muted2);
+      font-weight: 500;
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+      letter-spacing: -0.02em;
+    }
+
+    .btnrow{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: 12px;
+      margin: 24px 0 32px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 9px;
+      padding: 13px 22px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--btn);
+      color: var(--btnText);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      user-select:none;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+    }
+    
+    .btn svg{ 
+      width: 18px; 
+      height: 18px; 
+      fill: currentColor; 
+      opacity: 0.95;
+      flex-shrink: 0;
+    }
+
+    .btn:hover{ 
+      transform: translateY(-2px); 
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn:active{ 
+      transform: translateY(0px); 
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+    
+    .btn:focus-visible{ 
+      outline: 3px solid rgba(37, 99, 235, 0.4); 
+      outline-offset: 2px; 
+    }
+
+    @media (max-width: 700px){
+      .wrap{ padding: 48px 0 64px; }
+      .authors .a{ white-space: normal; }
+      .btn{ font-size: 14px; padding: 12px 20px; gap: 8px; }
+      h1{ margin-bottom: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>
+      Curriculum Learning and Pseudo-Labeling Improve the Generalization of <br/>
+      Multi-Label Arabic Dialect Identification Models
+    </h1>
+
+    <div class="authors" aria-label="Authors">
+      <span class="a">Ali Mekky</span><sup>1*</sup>,&nbsp;
+      <span class="a">Mohamed El Zeftawy</span><sup>1*</sup>,&nbsp;
+      <span class="a">Lara Hassan</span><sup>1*</sup><br/>
+      <span class="a">Amr Keleg</span><sup>1</sup>,&nbsp;
+      <span class="a">Preslav Nakov</span><sup>1</sup>
+    </div>
+
+    <div class="affil">
+      <span><sup>1</sup>Mohamed Bin Zayed University of Artificial Intelligence</span>
+    </div>
+
+    <div class="notes">
+      <span>* Equal contribution.</span>
+    </div>
+
+    <div class="email">
+      {ali.mekky, mohamed.elzeftawy, lara.hassan, amr.keleg, preslav.nakov}@mbzuai.ac.ae
+    </div>
+
+    <div class="btnrow" aria-label="Project resources">
+      <a class="btn" href="#" aria-label="Paper">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 2h8l4 4v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V7h3.5L14 3.5zM7 11h10v2H7v-2zm0 4h10v2H7v-2zm0-8h6v2H7V7z"/>
+        </svg>
+        Paper
+      </a>
+
+      <a class="btn" href="#" aria-label="Code">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.86 3.16 8.98 7.55 10.43.55.1.75-.24.75-.53v-1.9c-3.07.67-3.72-1.3-3.72-1.3-.5-1.28-1.22-1.62-1.22-1.62-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.58 1.2 3.21.92.1-.71.38-1.2.69-1.48-2.45-.28-5.03-1.23-5.03-5.49 0-1.21.43-2.2 1.13-2.98-.11-.28-.49-1.4.11-2.93 0 0 .92-.3 3.01 1.14.87-.24 1.8-.36 2.73-.36.93 0 1.86.12 2.73.36 2.09-1.44 3.01-1.14 3.01-1.14.6 1.53.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.98 0 4.27-2.59 5.2-5.05 5.47.39.33.74 1 .74 2.02v2.99c0 .29.2.64.76.53 4.38-1.46 7.53-5.57 7.53-10.42C23.25 5.48 18.27.5 12 .5z"/>
+        </svg>
+        Code
+      </a>
+
+      <a class="btn" href="#" aria-label="Data">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C7.03 2 3 3.79 3 6v12c0 2.21 4.03 4 9 4s9-1.79 9-4V6c0-2.21-4.03-4-9-4zm0 2c4.42 0 7 .98 7 2s-2.58 2-7 2-7-.98-7-2 2.58-2 7-2zm0 6c4.42 0 7-.98 7-2v3c0 1.02-2.58 2-7 2s-7-.98-7-2V8c0 1.02 2.58 2 7 2zm0 6c4.42 0 7-.98 7-2v3c0 1.02-2.58 2-7 2s-7-.98-7-2v-3c0 1.02 2.58 2 7 2z"/>
+        </svg>
+        Data
+      </a>
+    </div>
+  </div>
+</body>
+</html>
